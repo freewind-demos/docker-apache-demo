@@ -1,8 +1,9 @@
 version: '3'
 services:
   apache:
-    image: httpd:2.4.41
+    build: .
     ports:
       - 10080:80
     volumes:
-      - ./htdocs:/usr/local/apache2/htdocs/
+      - ./usr/local/apache2/htdocs/:/usr/local/apache2/htdocs/
+      - ./data:/data
